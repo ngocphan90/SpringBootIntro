@@ -38,6 +38,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!--in memory	-->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
 		<!--adding swagger dependency here	-->
 		<dependency>
 			<groupId>io.springfox</groupId>

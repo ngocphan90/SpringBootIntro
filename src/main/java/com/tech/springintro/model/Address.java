@@ -5,12 +5,12 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
-
 @Entity
+@Table (name = "address")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
 
     @Column
     private String street;
@@ -18,12 +18,7 @@ public class Address {
     @Column
     private String city;
 
-    @OneToOne
-    @JoinColumn( name = "id" , referencedColumnName = "id")
-
-    private Person person;
-
-    public Address(Long id, String street, String city) {
+    public Address(int id, String street, String city) {
         this.id = id;
         this.street = street;
         this.city = city;
@@ -37,11 +32,11 @@ public class Address {
         return String.format("Testing ", id, street, city);
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
