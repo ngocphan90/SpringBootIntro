@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-
 public class Controller {
     @Autowired
     AddressRepository addressRepository;
@@ -19,8 +18,15 @@ public class Controller {
         address.setId(1);
         address.setStreet("12613 Seattle Slew Dr");
         address.setCity("Houston");
+        address.setApt(4222);
+
         addressRepository.save(address);
         return address;
+    }
+    @PutMapping("/addNewAddress")
+    public String addNewAddress(@RequestBody Address address){
+        addressRepository.save(address);
+        return "added";
     }
 }
 
