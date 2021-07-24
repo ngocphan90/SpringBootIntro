@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS Address (
     id INT (4) PRIMARY KEY,
     street  VARCHAR(25) NOT NULL,
     city VARCHAR(10) NOT NULL,
-    apt INT(5) null
+    apt INT(5)
 
     );
 CREATE TABLE Person (

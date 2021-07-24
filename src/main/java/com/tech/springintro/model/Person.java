@@ -14,11 +14,10 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     private Long id ;
-
     private String first_name;
     private String last_name;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn (name = "address_id", referencedColumnName = "id")
     private Address address;
 

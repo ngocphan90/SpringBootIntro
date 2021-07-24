@@ -13,14 +13,10 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
-    @Column
     private String street;
-
-    @Column
-    private String city;
-
-    @Column
     private int apt;
+    private String city;
+    private String state;
+    private int zipcode;
 
 }
