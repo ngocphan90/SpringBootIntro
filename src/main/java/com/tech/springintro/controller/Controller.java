@@ -21,7 +21,7 @@ public class Controller {
     @PutMapping("/addNewAddress")
     public String saveNewAddress( @RequestBody Address address) {
         addressRepository.save(address);
-        return "added";
+        return "added address";
     }
 }
 

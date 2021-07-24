@@ -16,12 +16,11 @@ public class PersonController {
         return personRepository.getPersonById(id);
 
     }
-
     @PutMapping("/addNewPerson")
     public String addNewPerson(@RequestBody Person person) {
         personRepository.save(person);
 
-        return "added";
+        return "added person";
 
     }
 }
