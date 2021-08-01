@@ -7,12 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/person")
 public class PersonController {
     @Autowired
     PersonRepository personRepository;
 
-    @GetMapping("/addPerson")
-    public Person person (@RequestParam Integer id) {
+    @GetMapping("/getPerson")
+    public Person getPerson (@RequestParam Integer id) {
         return personRepository.getPersonById(id);
 
     }
