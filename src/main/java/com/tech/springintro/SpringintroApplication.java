@@ -17,6 +17,13 @@ public class SpringintroApplication {
 		SpringApplication.run(SpringintroApplication.class, args);
 	}
 
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:4200");
+			}
+		};
 
 }
 
@@ -25,3 +32,6 @@ public class SpringintroApplication {
 
 
 
+
+
+}
